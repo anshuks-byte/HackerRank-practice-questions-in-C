@@ -1,0 +1,221 @@
+/*
+You are given a 4-digit integer N.
+
+Your task is to rearrange its digits in descending order, using only if-else statements.
+
+Note:
+
+You must not use arrays, loops, sorting functions, built-in sort utilities, or library functions.
+
+Instead, manually compare the digits using nested if-else conditions and determine their order from largest to smallest.
+
+Finally, print the rearranged digits without spaces.
+
+Input Format
+
+A single integer: {N}
+
+Constraints
+
+1000 ≤ N ≤ 9999
+N is always a 4-digit integer.
+Only if-else statements may be used for comparisons.
+No loops, no arrays, no sorting algorithms, no built-in functions like sort/max/min.
+Output Format
+
+Print the four digits of N, rearranged in descending order, without spaces.
+
+Sample Input 0
+
+2583
+Sample Output 0
+
+8532
+Sample Input 1
+
+2222
+Sample Output 1
+
+2222
+Sample Input 2
+
+9012
+Sample Output 2
+
+9210
+*/
+
+
+
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+void rearrangeInputDigits()
+{
+    int n,a,b,c,d;
+    scanf("%d",&n);
+    
+    a=(n/1000);
+    b=((n%1000)/100);
+    c=(n%100)/10;
+    d=(n%100)%10;
+    
+    if((a>=b)&&(a>=c)&&(a>=d))
+    {
+        if((b>=c)&&(b>=d))
+        {
+            if(c>=d)
+            {
+                printf("%d%d%d%d",a,b,c,d);
+            }
+            else
+            {
+                printf("%d%d%d%d",a,b,d,c); 
+            }
+        }
+        else if((c>=d)&&(c>=b))
+        {
+          if(d>=b)
+            {
+                printf("%d%d%d%d",a,c,d,b);
+            }
+            else
+            {
+                printf("%d%d%d%d",a,c,b,d); 
+            }  
+        }
+        else if((d>=b)&&(d>=c))
+        {
+           if(b>=c)
+            {
+                printf("%d%d%d%d",a,d,b,c);
+            }
+            else
+            {
+                printf("%d%d%d%d",a,d,c,b); 
+            }  
+        }
+    }
+    else if((b>=a)&&(b>=c)&&(b>=d))
+    {
+        if((a>=c)&&(a>=d))
+        {
+          if(c>=d)
+            {
+                printf("%d%d%d%d",b,a,c,d);
+            }
+            else
+            {
+                printf("%d%d%d%d",b,a,d,c); 
+            } 
+        }
+        else if((c>=a)&&(c>=d))
+        {
+           if(a>=d)
+            {
+                printf("%d%d%d%d",b,c,a,d);
+            }
+            else
+            {
+                printf("%d%d%d%d",b,c,d,a); 
+            } 
+        }
+        else if((d>=a)&&(d>=c))
+        {
+            if(a>=b)
+            {
+                printf("%d%d%d%d",b,d,a,b);
+            }
+            else
+            {
+                printf("%d%d%d%d",b,d,b,a); 
+            } 
+         }
+    }
+    else if((c>=a)&&(c>=b)&&(c>=d))
+    {
+        if((a>=b)&&(a>=d))
+        {
+           if(b>=d)
+            {
+                printf("%d%d%d%d",c,a,b,d);
+            }
+            else
+            {
+                printf("%d%d%d%d",c,a,d,b); 
+            }  
+        }
+        else if((b>=a)&&(b>=d))
+        {
+          if(a>=d)
+            {
+                printf("%d%d%d%d",c,b,a,d);
+            }
+            else
+            {
+                printf("%d%d%d%d",c,b,d,a); 
+            }   
+        }
+        else if((d>=a)&&(d>=b))
+        {
+          if(a>=b)
+            {
+                printf("%d%d%d%d",c,d,a,b);
+            }
+            else
+            {
+                printf("%d%d%d%d",c,d,b,a); 
+            }   
+        }
+    }
+    else if((d>=a)&&(d>=b)&&(d>=c))
+    {
+        if((a>=b)&&(a>=c))
+        {
+          if(b>=c)
+            {
+                printf("%d%d%d%d",d,a,b,c);
+            }
+            else
+            {
+                printf("%d%d%d%d",d,a,c,b); 
+            }   
+        }
+        else if((b>=c)&&(b>=a))
+        {
+          if(a>=c)
+            {
+                printf("%d%d%d%d",d,b,a,c);
+            }
+            else
+            {
+                printf("%d%d%d%d",d,b,c,a); 
+            }    
+        }
+        else if((c>=a)&&(c>=b))
+        {
+          if(a>=b)
+            {
+                printf("%d%d%d%d",d,c,a,b);
+            }
+            else
+            {
+                printf("%d%d%d%d",d,c,b,a); 
+            }    
+        }
+    }
+    else if((a==b)&&(a==c)&&(a==d))
+    {
+        printf("%d%d%d%d",d,c,b,a); 
+    }
+        
+    
+    
+}
+int main() {
+
+    rearrangeInputDigits();    
+    return 0;
+}
