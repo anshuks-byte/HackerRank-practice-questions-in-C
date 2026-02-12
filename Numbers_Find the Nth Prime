@@ -1,0 +1,64 @@
+/*
+Given an integer n, write a program to calculate the n-th prime number, starting from 1.
+
+Input Format
+
+A single integer 𝑛.
+Constraints
+
+1 <= n <=104
+Output Format
+
+Print the n-th prime number.
+Sample Input 0
+
+6
+Sample Output 0
+
+13
+Explanation 0
+
+13 is the 6th prime number.
+
+Sample Input 1
+
+12
+Sample Output 1
+
+37
+*/
+
+
+
+
+
+#include <stdio.h>
+#include <math.h>
+void nthPrime()
+{
+    int n,count=1;
+    scanf("%d",&n);
+    int i;
+    for(i=3;count<n;++i)
+    {
+        int j;
+        for(j=2;j<=(int)sqrt(i);++j)
+        {
+           
+            if(i%j==0)
+            {
+             break;   
+            }
+        
+        }
+        if(j==((int)sqrt(i)+1))
+            count++;
+        
+    }
+    printf("%d",i-1);
+}
+int main() {
+
+    nthPrime();
+    return 0;
+}
